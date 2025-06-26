@@ -134,7 +134,7 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    background-color:  hsla(0, 0%, 93%, 0.705);
+    background-color:  white;
     z-index: 1000;
     transition: var(--transition);
     box-shadow: var(--shadow-lg);
