@@ -166,6 +166,7 @@ function initializeAnimations() {
 
 // Contact Form Functionality
 function initializeContactForm() {
+    
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
@@ -174,25 +175,41 @@ function initializeContactForm() {
             
             const formData = new FormData(contactForm);
             const errors = validateForm(formData);
-            
+
             if (errors.length > 0) {
                 showNotification(errors.join(', '), 'error');
                 return;
             }
-            
-            // Simulate form submission
-            showNotification('¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.', 'success');
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Track form submission
-            trackEvent('contact_form_submitted', {
-                subject: formData.get('asunto')
+
+            // Envía los datos a Formspree usando fetch
+            fetch('https://formspree.io/f/mnnvdvqe', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showNotification('¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.', 'success');
+                    contactForm.reset();
+                    trackEvent('contact_form_submitted', {
+                        subject: formData.get('asunto')
+                    });
+                } else {
+                    return response.json().then(data => {
+                        throw new Error(data.errors?.[0]?.message || 'Error al enviar el formulario');
+                    });
+                }
+            })
+            .catch(error => {
+                showNotification('Ocurrió un problema al enviar el mensaje. Intenta nuevamente más tarde.', 'error');
+                console.error('Error al enviar el formulario:', error);
             });
         });
     }
 }
+
 
 // Form validation
 function validateForm(formData) {
