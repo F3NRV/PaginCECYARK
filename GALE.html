@@ -2,51 +2,69 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Galería</title>
-  <style>
-    body {
-      background-color: #e6f5e6;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      text-align: center;
-      color: #2e7d32;
-      padding: 20px;
-    }
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
-    }
-    .galeria img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border: 4px solid #81c784;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-    .galeria img:hover {
-      transform: scale(1.05);
-      border-color: #66bb6a;
-    }
-  </style>
+  <title>Galería Multimedia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-  <h1>Galería Escolar</h1>
-  <div class="galeria">
-    <a href="EAZX5800.JPG"><img src="EAZX5800.JPG" alt="Imagen 1"></a>
-    <img src="IMG_E7390.JPG" alt="Imagen 1">
-    <img src="IMG_0821.JPG" alt="Imagen 2">
-    <img src="IMG_E4230.JPG" alt="Imagen 3">
-    <img src="IMG_E5347.JPG" alt="Imagen 4">
-    <img src="IMG_E3903.JPG" alt="Imagen 5">
-    <img src="IMG_E7296.JPG" alt="Imagen 6">
-    <img src="IMG_E7391.JPG" alt="Imagen 7">
-  </div>
+
+  <section class="galeria">
+    <div class="swiper galeria-slider">
+      <div class="swiper-wrapper">
+  <!-- Imágenes -->
+  <div class="swiper-slide"><img src="IMG_E6324.JPG" alt="Imagen IMG_E6324"></div>
+  <div class="swiper-slide"><img src="IMG_E6328.JPG" alt="Imagen IMG_E6328"></div>
+  <div class="swiper-slide"><img src="IMG_E6350.JPG" alt="Imagen IMG_E6350"></div>
+  <div class="swiper-slide"><img src="IMG_E5612.JPG" alt="Imagen IMG_E5612"></div>
+  <div class="swiper-slide"><img src="IMG_5723.JPG" alt="Imagen IMG_5723"></div>
+  <div class="swiper-slide"><img src="IMG_0124.JPG" alt="Imagen IMG_0124"></div>
+  <div class="swiper-slide"><img src="IMG_0139.JPG" alt="Imagen IMG_0139"></div>
+
+  <!-- Videos -->
+  <div class="swiper-slide"><video controls><source src="IMG_7631.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_7632.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_E4210.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_7616.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_7617.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_7618.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_7441.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_7442.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_7447.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_7450.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_5910.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_6913.MOV" type="video/mp4"></video></div>
+  <div class="swiper-slide"><video controls><source src="IMG_E5891.MOV" type="video/mp4"></video></div>
+</div>
+
+        <!-- Agrega más slides aquí -->
+      </div>
+
+      <!-- Botones de navegación -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.galeria-slider', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      }
+    });
+  </script>
+
 </body>
 </html>
