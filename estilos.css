@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  background: #e8f5e9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.galeria {
+  padding: 40px;
+  background-color: #d0f0c0;
+}
+
+.swiper-slide img,
+.swiper-slide video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 100, 0, 0.25);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2e7d32;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #43a047;
+}
