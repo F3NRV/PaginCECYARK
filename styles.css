@@ -1602,3 +1602,55 @@ p {
   width: 5rem;
   height: auto;
     }
+/* === HERO SLIDER RESPONSIVO === */
+@media (max-width: 768px) {
+  .slider-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slide {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .slide-background {
+    background-position: center !important;
+    background-size: cover !important;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .slider-btn {
+    font-size: 1.5rem;
+    top: auto;
+    bottom: 20px;
+  }
+
+  .slider-indicators {
+    bottom: 10px;
+    gap: 0.5rem;
+  }
+
+  .stat {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
