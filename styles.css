@@ -1599,61 +1599,6 @@ p {
 }
 
 .icon-left, .icon-right {
-  width: 5rem; /* Ajusta el tamaño según lo necesites */
+  width: 5rem;
   height: auto;
-}
-
-/* --- Responsive Layout --- */
-@media (max-width: 768px) {
-    #nav-toggle {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 1.8rem;
-        background: none;
-        border: none;
-        color: white;
-        z-index: 1001;
     }
-
-    #navbar ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: var(--forest-green);
-        width: 100%;
-        padding: 1rem;
-        z-index: 1000;
-    }
-
-    #navbar ul.active {
-        display: flex;
-    }
-
-    #navbar li {
-        margin: 1rem 0;
-    }
-
-    section, .section-content {
-        flex-direction: column;
-        padding: 1rem;
-    }
-
-    form {
-        width: 100%;
-    }
-
-    input, textarea, button {
-        width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    .gallery img {
-        width: 100%;
-        height: auto;
-    }
-    }
-    
